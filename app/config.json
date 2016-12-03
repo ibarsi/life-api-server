@@ -1,4 +1,5 @@
 {
+    "database": "mongodb://localhost/life-api",
     "bodyLimit": "100kb",
     "corsHeaders": ["Link"]
 }

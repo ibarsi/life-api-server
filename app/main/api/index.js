@@ -1,14 +1,14 @@
 import { Router } from 'express';
 
 import Drink from '../models/drink';
+import logger from '../helpers/logger_helper';
 import { version } from '../../../package.json';
 
 export default () => {
     let router = Router();
 
     router.use((request, response, next) => {
-        // do logging
-        console.log('Something is happening.');
+        logger.info('Something is happening.');
 
         next();
     });

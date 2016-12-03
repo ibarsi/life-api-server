@@ -7,7 +7,7 @@
     "db-start": "mongod --dbpath=/data/mongodb/life-api",
     "db-dump": "mongodump -v -o /data/mongodb/backups",
     "db-restore": "mongorestore -d life-api /data/mongodb/backups/life-api --drop",
-    "watch": "nodemon -w app/main --exec \"babel-node app/main\"",
+    "watch": "NODE_ENV=DEV nodemon -w app/main --exec \"babel-node app/main\"",
     "clean": "rm -rf app/dist && mkdir app/dist",
     "build": "npm run clean && babel app/main -s -D -d app/dist",
     "start": "node app/dist",
@@ -21,7 +21,8 @@
     "cors": "^2.7.1",
     "express": "^4.13.3",
     "mongodb": "^2.2.10",
-    "mongoose": "^4.6.2"
+    "mongoose": "^4.6.2",
+    "winston": "^2.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",

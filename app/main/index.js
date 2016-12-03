@@ -6,6 +6,7 @@ import cors from 'cors';
 import db from './db';
 import api from './api';
 import config from '../config.json';
+import logger from './helpers/logger_helper';
 
 let app = express();
 app.server = http.createServer(app);
@@ -26,7 +27,7 @@ db(() => {
 
     app.server.listen(process.env.PORT || 8080);
 
-    console.log(`Started on port ${app.server.address().port}`);
+    logger.info(`Started on port ${app.server.address().port}`);
 });
 
 export default app;
