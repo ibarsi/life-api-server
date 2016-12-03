@@ -1,0 +1,10 @@
+# Git
+**/.git
+
+# Static files
+**/node_modules
+**/bower_components
+
+# Build
+**/build
+**/dist

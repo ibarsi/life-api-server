@@ -1,0 +1,32 @@
+{
+  "name": "life-api",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist",
+  "scripts": {
+    "db-start": "mongod --dbpath=/data/mongodb/life-api",
+    "db-dump": "mongodump -v -o /data/mongodb/backups",
+    "db-restore": "mongorestore -d life-api /data/mongodb/backups/life-api --drop",
+    "watch": "nodemon -w app/main --exec \"babel-node app/main\"",
+    "clean": "rm -rf app/dist && mkdir app/dist",
+    "build": "npm run clean && babel app/main -s -D -d app/dist",
+    "start": "node app/dist",
+    "start-pm2": "pm2 app/dist -n life-api-prod"
+  },
+  "repository": "",
+  "author": "Igor Barsi",
+  "license": "",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "nodemon": "^1.9.2"
+  }
+}
