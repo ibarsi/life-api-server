@@ -1,7 +1,6 @@
-### LINKS ###
+## README ##
 
-This Node based REST app is part of a collection of software for a personal side project, inspired by
- [Jane Kim](http://janekim.me/)'s own project by the same name, aimed at tracking different aspects of my personal life.
+This Node based REST app is part of a collection of software for a personal side project, inspired by [Jane Kim](http://janekim.me/)'s own project by the same name, aimed at tracking different aspects of my personal life.
 
 life-api-server is a collection of APIs that represent data pertaning to my personal life, designed to be consumed by client facing applications part of this software collection.
 
