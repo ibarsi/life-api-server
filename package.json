@@ -1,6 +1,6 @@
 {
-  "name": "life-api",
-  "version": "0.1.0",
+  "name": "life-api-server",
+  "version": "1.0.0",
   "description": "",
   "main": "dist",
   "scripts": {
@@ -13,7 +13,7 @@
     "start": "node app/dist",
     "start-pm2": "pm2 app/dist -n life-api-prod"
   },
-  "repository": "",
+  "repository": "https://github.com/ibarsi/life-api-server",
   "author": "Igor Barsi",
   "license": "",
   "dependencies": {
