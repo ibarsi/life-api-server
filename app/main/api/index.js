@@ -28,10 +28,23 @@ export default () => {
         .post((request, response) => {
             let drink = new Drink();
 
-            drink.save((error) => {
+            drink.save(error => {
                 if (error) { response.send(error); }
 
                 response.json({ message: 'Drink created!' });
+            });
+        })
+        .delete((request, response) => {
+            Drink.findOneAndRemove({},
+            {
+                sort: {
+                    date_consumed: -1
+                }
+            },
+            error => {
+                if (error) { response.send(error); }
+
+                response.json({ message: 'Drink removed!' });
             });
         });
 
