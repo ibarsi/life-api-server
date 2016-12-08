@@ -2,9 +2,9 @@ import winston from 'winston';
 
 const winston_logger = new winston.Logger({
     transports: [
-      new winston.transports.File({ filename: '/var/log/life-api.log' })
+        new winston.transports.File({ filename: '/var/log/life-api.log' })
     ]
-  });
+});
 
 const logger = {
     info(message) {

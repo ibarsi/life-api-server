@@ -5,7 +5,8 @@
   "main": "dist",
   "scripts": {
     "db-start": "mongod --dbpath=/data/mongodb/life-api",
-    "db-dump": "mongodump -v -o /data/mongodb/backups",
+    "db-start-daemon": "mongod --fork --dbpath=/data/mongodb/life-api --logpath /var/log/mongodb/mongodb.log",
+    "db-dump": "mongodump -v -o /data/mongodb/backups/`date \"+%Y-%m-%d\"`",
     "db-restore": "mongorestore -d life-api /data/mongodb/backups/life-api --drop",
     "watch": "NODE_ENV=DEV nodemon -w app/main --exec \"babel-node app/main\"",
     "clean": "rm -rf app/dist && mkdir app/dist",
