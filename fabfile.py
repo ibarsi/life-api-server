@@ -29,6 +29,7 @@ def deploy():
     tag = default_tag if tag in [None, ''] else tag
 
     with cd(CODE_DIR):
+        run('git pull origin master')
         run('git checkout tags/{0}'.format(tag))
         run('npm run build')
         run('npm prune')
