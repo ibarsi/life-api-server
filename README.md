@@ -14,3 +14,15 @@ life-api-server is a collection of APIs that represent data pertaning to my pers
 6. Build application by running `npm run build`.
 7. Start server by running `npm start`.
 8. All set!
+
+### DEPLOY ###
+To use the `deploy.py` script, follow the steps below:
+
+1. Ensure you have a Python environment set up on your machine.
+2. Run `pip install virtualenv`.
+3. Create your virtualenv by running `virtualenv life-api-server` (this path has been added to `.gitignore`).
+4. Activate virtualenv by running `source life-api-server/bin/activate`.
+5. Install frozen dependencies by running `pip install -r requirements.txt`.
+6. Create `settings.py` from the example file available and modify fields to match your environment.
+
+You should now be able to run the deploy script via `fab deploy`. Follow prompts to deploy code.
