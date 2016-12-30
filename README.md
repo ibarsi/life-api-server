@@ -23,6 +23,6 @@ To use the `deploy.py` script, follow the steps below:
 3. Create your virtualenv by running `virtualenv life-api-server` (this path has been added to `.gitignore`).
 4. Activate virtualenv by running `source life-api-server/bin/activate`.
 5. Install frozen dependencies by running `pip install -r requirements.txt`.
-6. Create `settings.py` from the example file available and modify fields to match your environment.
+6. Modify `settings.py` fields to match your environment.
 
 You should now be able to run the deploy script via `fab deploy`. Follow prompts to deploy code.

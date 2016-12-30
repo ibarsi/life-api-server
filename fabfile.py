@@ -5,10 +5,10 @@ import json
 
 from fabric.api import env, task, cd, run, prompt
 
-from settings import HOST, CODE_DIR, PM2_APP_NAME
+from settings import REMOTE_HOST, REMOTE_CODE_DIR, PM2_APP_NAME
 
 # CONFIG
-env.hosts = [HOST]
+env.hosts = [REMOTE_HOST]
 env.use_ssh_config = True
 
 
@@ -28,7 +28,7 @@ def deploy():
     tag = prompt('Please enter {0} {1} [default: {2}]: '.format('tag', '(eg. 1.0.0)', default_tag))
     tag = default_tag if tag in [None, ''] else tag
 
-    with cd(CODE_DIR):
+    with cd(REMOTE_CODE_DIR):
         run('git checkout master')
         run('git pull')
         run('git checkout tags/{0}'.format(tag))
