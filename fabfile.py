@@ -36,3 +36,41 @@ def deploy():
         run('npm prune')
         run('npm install')
         run('sudo pm2 reload {0}'.format(PM2_APP_NAME))
+
+    print 'Successfully deployed {0} version {1}'.format(PM2_APP_NAME, default_tag)
+
+
+@task
+def pm2_start():
+    print 'Running on {0} as {1}'.format(env.hosts, env.user)
+
+    run('sudo pm2 start {0}/app/dist/index.js --name {1}'.format(REMOTE_CODE_DIR, PM2_APP_NAME))
+
+    print 'Successfully spawned {0}'.format(PM2_APP_NAME)
+
+
+@task
+def pm2_stop():
+    print 'Running on {0} as {1}'.format(env.hosts, env.user)
+
+    run('sudo pm2 stop {0}'.format(PM2_APP_NAME))
+
+    print 'Successfully stopped {0}'.format(PM2_APP_NAME)
+
+
+@task
+def pm2_restart():
+    print 'Running on {0} as {1}'.format(env.hosts, env.user)
+
+    run('sudo pm2 restart {0}'.format(PM2_APP_NAME))
+
+    print 'Successfully resumed {0}'.format(PM2_APP_NAME)
+
+
+@task
+def pm2_delete():
+    print 'Running on {0} as {1}'.format(env.hosts, env.user)
+
+    run('sudo pm2 delete {0}'.format(PM2_APP_NAME))
+
+    print 'Successfully deleted {0}'.format(PM2_APP_NAME)
